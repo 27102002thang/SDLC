@@ -9,7 +9,7 @@ class ProductController extends Controller{
     public function getAll(){
         $listProduct = DB::table('products')->get();
 
-        return view("/admin.product", [
+        return view("/adminn.product", [
             "listProduct" => $listProduct
         ]);
     }

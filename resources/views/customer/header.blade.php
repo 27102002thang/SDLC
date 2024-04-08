@@ -4,7 +4,7 @@
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                 <!-- Thay đổi đường dẫn tới ảnh logo -->
                 <img src="{{ asset('image/111.jpg') }}" style="width: 50px;" alt="logo">
-                <span class="ms-2 fs-4">LEGO STORE</span>
+                <span class="ms-2 fs-4">CAR GO</span>
             </a>
 
             <ul class="nav d-flex justify-content-center justify-content-lg-start">

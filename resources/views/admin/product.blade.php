@@ -34,9 +34,9 @@
                 <td>{{$product->price}}</td>
                 <td>{{$product->description}}</td>
 {{--                <td><img src="{{ Storage::url($user->image) }}" alt="Avatar" /></td>--}}
-                <td><img src="/image/{{$product->image}}" style="width:20%;height: 20%"/></td>
-                <td>{{$product->imported_date}}</td>
-
+                <td><img src="/image/{{$product->image}}" style="width:60%; height: 60%" /></td>
+{{--                <td>{{$product->imported_date}}</td>--}}
+{{--                --}}
 
                 <td><a href="/product_delete/{{$product->id}}">Delete</a></td>
                 <td><a href="/product_update/{{$product->id}}">Update</a></td>
