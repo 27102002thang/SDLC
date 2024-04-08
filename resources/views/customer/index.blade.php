@@ -22,7 +22,7 @@
                 @foreach($listProduct as $listProducts)
                     <div class="col-md-4 mb-4">
                         <div class="card" style="width: 18rem;">
-                            <img src="/image/{{$listProducts->image}}" class="card-img-top" alt="Image of {{ $listProducts->name }}">
+                            <img src="/image/{{$listProducts->image}}" style="width: " class="card-img-top" alt="Image of {{ $listProducts->name }}">
                             <div class="card-body">
                                 <h5 class="card-title">Tên: {{ $listProducts->name }}</h5>
                                 <p class="card-text">Giá: {{ number_format($listProducts->price) }} VNĐ</p>

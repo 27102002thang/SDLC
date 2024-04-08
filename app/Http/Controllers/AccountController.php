@@ -9,7 +9,7 @@ class AccountController extends Controller
     public function showAcc(){
         $listAcc = DB::table('users')->get();
 
-        return view("/admin.account", [
+        return view("/adminn.account", [
             "listAcc" => $listAcc
         ]);
     }
