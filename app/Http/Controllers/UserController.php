@@ -7,15 +7,19 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function showdata(){
-        if(isset($_GET['keyword'])) {
-            $kw = trim($_GET['keyword']);
-            $listProduct=DB::table("SELECT * FROM 'products' WHERE 'name' LIKE '%". '$kw' ."%' ");
+    public function showdata(Request $request){
+        $keyword = $request->input('keyword');
+        if ($keyword) {
+            $keyword = '%' . trim($keyword) . '%';
+            $listProduct = DB::table('cars')
+                ->where('name', 'like', $keyword)
+                ->               paginate(1);
+
         }else{
-            $listProduct =DB::table('products')->get();
-//        dd($listProduct)
+            $listProduct =DB::table('cars')->paginate(1);
+            $categories = DB::table('categories')->get();
         }
-        return view("/customer.index", compact('listProduct'));
+        return view("/customer.content", compact('listProduct','categories'));
     }
 
 }

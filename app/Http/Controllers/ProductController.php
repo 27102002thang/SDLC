@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller{
     public function getAll(){
-        $listProduct = DB::table('products')->get();
+        $listProduct = DB::table('cars')->get();
 
         return view("/adminn.product", [
             "listProduct" => $listProduct
@@ -33,7 +33,7 @@ class ProductController extends Controller{
             $request->image->move(public_path("image"), $image);
         };
         $importedDate = now();
-        DB::table("products")-> insert([
+        DB::table("cars")-> insert([
             'name' => $productName,
             'price'=> $price,
             'description'=> $description,
@@ -44,7 +44,7 @@ class ProductController extends Controller{
     }
 
     public function update($id){
-        $product =DB::table('products')
+        $product =DB::table('cars')
             ->where('id','=',$id)
             -> first();
         return view('/admin.product_update',[
@@ -59,7 +59,7 @@ class ProductController extends Controller{
         $description = $request ->description;
         $importedDate=$request ->date;
 
-        DB::table("products")
+        DB::table("cars")
             ->where ('id','=',$id)
             ->update([
                 'name' => $productName,
@@ -70,7 +70,7 @@ class ProductController extends Controller{
         return redirect('/product');
     }
     public function delete($id){
-        DB::table('products')
+        DB::table('cars')
             ->where ("id",$id)
             ->delete();
         return redirect("/product");

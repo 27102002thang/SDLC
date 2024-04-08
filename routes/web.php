@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
 
 // Customer routes
 
-Route::get('/customer/index', [\App\Http\Controllers\UserController::class,'showdata'])->name('customer.index');
+Route::get('/customer/index', [\App\Http\Controllers\UserController::class,'showdata'])->name('customer.content');
 
 Route::get('/login', [\App\Http\Controllers\AuthController::class, 'viewLogin'])->name('login');
 Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
@@ -32,7 +32,7 @@ Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])-
 
 
 // khi vào link liên hệ sẽ vào LienHeController , function showData
-Route::get('/account',[AccountController::class, "showAcc"]);
+Route::get('/admin/account',[AccountController::class, "showAcc"]);
 
 Route::get('/addAccount',[AccountController::class, "addAcc"]);
 Route::post("/accountSave", [AccountController::class, "save"]);
@@ -41,7 +41,7 @@ Route::get("/account_update/{id}", [AccountController::class, "update"]);
 Route::post("/accountSaveUpdate", [AccountController::class, "saveUpdate"]);
 
 
-Route::get("/product", [\App\Http\Controllers\ProductController::class, "getAll"]);
+Route::get("/admin/product", [\App\Http\Controllers\ProductController::class, "getAll"]);
 Route::get("/productAdd", [\App\Http\Controllers\ProductController::class, "add"]);
 Route::post("/productSave", [\App\Http\Controllers\ProductController::class, "save"]);
 Route::get("/product_delete/{id}", [\App\Http\Controllers\ProductController::class, "delete"]);
@@ -49,4 +49,4 @@ Route::get("/product_update/{id}", [\App\Http\Controllers\ProductController::cla
 Route::post("/productSaveUpdate", [\App\Http\Controllers\ProductController::class, "saveUpdate"]);
 
 
-
+Route::get("/customer/category", [\App\Http\Controllers\CategoryController::class, "category"]);
