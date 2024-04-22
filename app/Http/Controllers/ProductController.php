@@ -9,7 +9,7 @@ class ProductController extends Controller{
     public function getAll(){
         $listProduct = DB::table('cars')->get();
 
-        return view("/adminn.product", [
+        return view("/admin.product", [
             "listProduct" => $listProduct
         ]);
     }
@@ -40,7 +40,7 @@ class ProductController extends Controller{
             'imported_date' => $importedDate,
             'image' => $image
         ]);
-        return redirect("/product");
+        return redirect("/admin/product");
     }
 
     public function update($id){
@@ -67,13 +67,13 @@ class ProductController extends Controller{
                 'description' => $description,
 
             ]);
-        return redirect('/product');
+        return redirect('/admin/product');
     }
     public function delete($id){
         DB::table('cars')
             ->where ("id",$id)
             ->delete();
-        return redirect("/product");
+        return redirect("/admin/product");
     }
 
 }

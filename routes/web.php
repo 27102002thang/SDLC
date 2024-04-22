@@ -50,3 +50,6 @@ Route::post("/productSaveUpdate", [\App\Http\Controllers\ProductController::clas
 
 
 Route::get("/customer/{id}", [\App\Http\Controllers\CategoryController::class, "category"]);
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+});

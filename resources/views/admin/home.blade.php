@@ -6,6 +6,19 @@
     <title>Admin Dashboard with Chart.js</title>
     <link rel="stylesheet" href="{{asset('bootstrap-5.3.3/css/bootstrap.min.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+            crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
     <style>
         body {
             background-color: #f8f9fa; /* Màu nền */
@@ -29,96 +42,34 @@
         }
     </style>
 </head>
-<body>
+<body class="sb-nav-fixed">
 <div class="container-fluid">
     {{--Header--}}
-    <div >
-        <header class="p-3 text-bg-dark">
-            <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-                <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/admin/home">Admin Function</a>
-                <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
-                <ul class="navbar-nav px-3">
-                    <li class="nav-item text-nowrap">
-                        <div class="d-flex align-items-center">
-                            <p class="me-3 mb-0">
-                                {{ Auth::user()->name }}
-                            </p>
-                            <form method="post" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-light">Logout</button>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    </div>
 
-    <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-            <div class="position-sticky pt-3">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/product">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                            Sản Phẩm
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                            Đơn hàng
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/account">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            Tài khoản
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/customer/index">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                            Trang Chủ Người Dùng
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        @include('admin.header')
         </nav>
+    {{--navbar--}}
 
-        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="chart-container">
-                <canvas id="myChart"></canvas>
-            </div>
+
+    <div id="layoutSidenav_content">
+        <div class="container">
+        @yield('content')
         </div>
     </div>
 
-    <script>
-        // Lấy thẻ canvas bằng ID
-        var ctx = document.getElementById('myChart').getContext('2d');
-        // Tạo một biểu đồ dòng
-        var myChart = new Chart(ctx, {
-            type: 'line', // Loại biểu đồ: dòng
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                    label: 'Sales',
-                    data: [65, 59, 80, 81, 56, 55, 40], // Dữ liệu
-                    borderColor: 'rgba(255, 99, 132, 1)', // Màu đường viền
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-    </script>
 </div>
 </body>
+<script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('assets/js/waypoints.min.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/meanmenu.min.js')}}"></script>
+<script src="{{asset('assets/js/swiper.min.js')}}"></script>
+<script src="{{asset('assets/js/slick.min.js')}}"></script>
+<script src="{{asset('assets/js/magnific-popup.min.js')}}"></script>
+<script src="{{asset('assets/js/counterup.js')}}"></script>
+<script src="{{asset('assets/js/wow.js')}}"></script>
+<script src="{{asset('assets/js/ajax-form.js')}}"></script>
+<script src="{{asset('assets/js/beforeafter.jquery-1.0.0.min.js')}}"></script>
+<script src="{{asset('assets/js/main.js')}}"></script>
 </html>

@@ -9,7 +9,7 @@ class AccountController extends Controller
     public function showAcc(){
         $listAcc = DB::table('users')->get();
 
-        return view("/adminn.account", [
+        return view("/admin.account", [
             "listAcc" => $listAcc
         ]);
     }
@@ -42,7 +42,7 @@ class AccountController extends Controller
             'phone' => $phone,
             'role' => $role
         ]);
-        return redirect("/account");
+        return redirect("/admin/account");
     }
 
     public function update($id){
@@ -71,12 +71,12 @@ class AccountController extends Controller
                 'phone' => $phone,
                 'role' => $role
             ]);
-        return redirect('/account');
+        return redirect('/admin/account');
     }
     public function delete($id){
         DB::table('users')
             ->where ("id",$id)
             ->delete();
-        return redirect("/account");
+        return redirect("/admin/account");
     }
 }
