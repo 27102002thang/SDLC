@@ -81,7 +81,7 @@
 {{--                            <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>--}}
 {{--                        </nav>--}}
 {{--                    </div>--}}
-                    <a class="nav-link collapsed" href="/account" >
+                    <a class="nav-link collapsed" href="/admin/account" >
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Account
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -113,25 +113,30 @@
             <table class="table ">
                 <tr>
                     <td>ID</td>
-                    <td>Sản phẩm</td>
+                    <td>Tên sản phẩm</td>
                     <td>Giá tiền</td>
                     <td>Loại nhiên liệu</td>
                     <td>Số chỗ ngồi</td>
+                    <td>Biển số xe</td>
                     <td></td>
                     <td></td>
+
                 </tr>
                 <hr>
                 @foreach($listProduct as $product)
                     <tr>
                         <td>{{$product->id}}</td>
-                        <td><img src="/image/{{$product->image}}"
-                                 style="width:120px;height: 80px"/><br> {{$product->name}}</td>
+                        <td><img src="/image/{{$product->image}}" style="width:60%; height: 60%" /><br>
+                            {{$product->name}}</td>
                         <td>{{$product->price}}</td>
                         <td>{{$product->fuel_type}}</td>
-                        {{--                <td><img src="{{ Storage::url($user->image) }}" alt="Avatar" /></td>--}}
                         <td>{{$product->seats}}</td>
-                        <td><a href="/product_delete/{{$product->id}}"><i class="fa-solid fa-trash"></i></a></td>
-                        <td><a href="/product_update/{{$product->id}}"><i class="fa-solid fa-wrench"></i></a></td>
+                        <td>{{$product->license_plates}}</td>
+
+
+                        <td><a href="/product_delete/{{$product->id}}">Delete</a></td>
+                        <td><a href="/product_update/{{$product->id}}">Update</a></td>
+
                     </tr>
                 @endforeach
             </table>

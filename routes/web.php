@@ -49,4 +49,4 @@ Route::get("/product_update/{id}", [\App\Http\Controllers\ProductController::cla
 Route::post("/productSaveUpdate", [\App\Http\Controllers\ProductController::class, "saveUpdate"]);
 
 
-Route::get("/customer/category", [\App\Http\Controllers\CategoryController::class, "category"]);
+Route::get("/customer/{id}", [\App\Http\Controllers\CategoryController::class, "category"]);

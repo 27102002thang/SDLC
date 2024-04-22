@@ -19,8 +19,10 @@
             <td>ID</td>
             <td>Tên sản phẩm</td>
             <td>Giá tiền</td>
-            <td>Mô tả sản phẩm</td>
-            <td>Ảnh</td>
+            <td>Loại nhiên liệu</td>
+            <td>Số chỗ ngồi</td>
+            <td>Biển số xe</td>
+
             <td>Ngày cập nhập</td>
             <td></td>
             <td></td>
@@ -32,11 +34,11 @@
                 <td>{{$product->id}}</td>
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
-                <td>{{$product->description}}</td>
-{{--                <td><img src="{{ Storage::url($user->image) }}" alt="Avatar" /></td>--}}
+                <td>{{$product->fuel_type}}</td>
+                <td>{{$product->seats}}</td>
+                <td>{{$product->license_plates}}</td>
+                <td>{{$product->price}}</td>
                 <td><img src="/image/{{$product->image}}" style="width:60%; height: 60%" /></td>
-{{--                <td>{{$product->imported_date}}</td>--}}
-{{--                --}}
 
                 <td><a href="/product_delete/{{$product->id}}">Delete</a></td>
                 <td><a href="/product_update/{{$product->id}}">Update</a></td>

@@ -14,7 +14,7 @@ class UserController extends Controller
             $listProduct = DB::table('cars')
                 ->where('name', 'like', $keyword)
                 ->               paginate(1);
-
+            $categories = DB::table('categories')->get();
         }else{
             $listProduct =DB::table('cars')->paginate(1);
             $categories = DB::table('categories')->get();

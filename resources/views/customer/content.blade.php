@@ -27,7 +27,7 @@
 @section('content')
     <main>
         <div class="breadcrumb__area theme-bg-1 p-relative z-index-11 pt-95 pb-95">
-            <div class="breadcrumb__thumb" data-background="{{asset('assets/imgs/bg/breadcrumb-bg-furniture.jpg')}}"></div>
+            <div class="breadcrumb__thumb" data-background="{{asset('assets/imgs/bg/5fbd679e83730.jpg')}}"></div>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xxl-12">
