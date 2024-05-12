@@ -21,7 +21,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Đổ bóng cho thẻ card */
         }
         .logo-img {
-            width: 150px; /* Kích thước của logo */
+            width: 100px; /* Kích thước của logo */
         }
         .form-control {
             border-radius: 20px; /* Độ cong viền của input */
@@ -68,41 +68,69 @@
 background-repeat: no-repeat; background-position: center; background-size:100% 100%
 ">
 
-    <div class="container">
-        <div class="col-lg-5">
-            <div class="card text-black">
-                <div class="col-lg-12">
-                    <div class="card-content p-md-4">
-                        <div class="text-center">
-                            <img src="{{ asset('image/cargo.jpg') }}" class="logo-img" alt="logo">
-                            <h4 class="mt-1 mb-4 pb-1 text-warning">Đăng nhập</h4>
-                        </div>
-                        <form method="post" autocomplete="off">
-                            @csrf
-                            <div class="mb-3">
-                                <input autocomplete="off" name="email" type="email" id="form2Example11" class="form-control"
-                                       placeholder="Email address" required/>
-                                <label class="form-label" for="form2Example11">Tên đăng nhập</label>
-                            </div>
-                            <div class="mb-3">
-                                <input autocomplete="off" name="password" type="password" id="form2Example22" class="form-control" required/>
-                                <label class="form-label" for="form2Example22">Mật khẩu</label>
-                            </div>
-                            <div class="text-center mb-4">
-                                <button class="btn btn-login btn-block fa-lg mb-3" style="color: white" type="submit">Đăng nhập</button>
-                                <a class="text-muted" href="#!">Quên mật khẩu?</a>
-                            </div>
-                            <div class="text-center">
-                                <p class="mb-0">Bạn chưa có tài khoản?</p>
-                                <button type="button" class="btn btn-create"><a href="/register" style="text-decoration: none">Tạo mới</a></button>
-                            </div>
-                        </form>
+<div class="container">
+    <div class="col-lg-5">
+        <div class="card text-black">
+            <div class="col-lg-12">
+                <div class="card-content p-md-4">
+                    <div class="text-center">
+                        <img src="{{ asset('image/cargo.jpg') }}" class="logo-img" alt="logo">
+                        <h4 style="color: #fd7e14">Đăng ký tài khoản</h4>
                     </div>
+                    <form method="POST" action="/saveRegister ">
+                        @csrf
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                            @error('name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Số điện thoại</label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
+                            @error('name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                            @error('email')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                            @error('password')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password_confirmation" class="form-label">Xác nhận mật khẩu</label>
+                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                            @error('password_confirmation')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <button type="submit"  class="btn btn-primary"> Đăng ký </button>
+                    </form>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 </body>
 </html>
+
+
+

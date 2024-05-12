@@ -13,10 +13,10 @@ class UserController extends Controller
             $keyword = '%' . trim($keyword) . '%';
             $listProduct = DB::table('cars')
                 ->where('name', 'like', $keyword)
-                ->               paginate(1);
+                ->               paginate(4);
             $categories = DB::table('categories')->get();
         }else{
-            $listProduct =DB::table('cars')->paginate(1);
+            $listProduct =DB::table('cars')->paginate(4);
             $categories = DB::table('categories')->get();
         }
         return view("/customer.content", compact('listProduct','categories'));

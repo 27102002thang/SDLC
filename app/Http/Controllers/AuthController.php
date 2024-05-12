@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -20,7 +21,7 @@ class AuthController extends Controller
                     return redirect()->route('admin.home');
                     break;
                 case 'customer':
-                    return redirect()->route('customer.home');
+                    return redirect()->route('customer.content');
                     break;
             }
         }
@@ -43,7 +44,7 @@ class AuthController extends Controller
                     return redirect()->route('admin.home');
                     break;
                 case 'customer':
-                    return redirect()->route('customer.index');
+                    return redirect()->route('customer.content');
                     break;
             }
         } else {
@@ -59,4 +60,39 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
+    function viewRegister(){
+        return view('auth.register');
+    }
+
+    public function saveRegister(Request $request)
+    {
+        $validate = $request->validate(
+            [
+                "name" => "required",
+                "email" => "required|email|unique:users,email"
+            ],
+            [
+                "name.required" => "Name is not empty",
+                "email.unique" => "Email is already taken",
+
+            ]
+        );
+//        $id = $request -> get('id');
+        $name = $request -> get('name');
+        $password = Hash::make($request->get('password'));
+        $email = $request ->get('email');
+        $phone = $request ->get('phone');
+
+        $role = "customer";
+
+        DB::table("users")-> insert([
+            'name' => $name,
+            'password'=> $password,
+            'email' => $email,
+            'phone' => $phone,
+            'role' => $role
+        ]);
+        return redirect("/login");
+    }
 }
+

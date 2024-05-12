@@ -14,7 +14,7 @@
         }
 
         .product-thumb img {
-            width: 200px; /* Đặt chiều rộng của hình ảnh là 100% để nó sẽ căn chỉnh với kích thước của phần tử cha */
+            width: 100%; /* Đặt chiều rộng của hình ảnh là 100% để nó sẽ căn chỉnh với kích thước của phần tử cha */
             height: 120px; /* Đảm bảo tỷ lệ khung hình không bị biến đổi */
         }
 
@@ -40,30 +40,7 @@
     <div>
         @yield('content')
     </div>
-{{--    <div class="vh-200 w-200 " style="background-image: url('{{ asset('image/10.jpg') }}">--}}
-{{--        <br>--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                @foreach($listProduct as $listProducts)--}}
-{{--                    <div class="col-md-4 mb-4">--}}
-{{--                        <div class="card" style="width: 18rem;">--}}
-{{--                            <img src="/image/{{$listProducts->image}}" style="width: " class="card-img-top" alt="Image of {{ $listProducts->name }}">--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h5 class="card-title">Tên: {{ $listProducts->name }}</h5>--}}
-{{--                                <p class="card-text">Giá: {{ number_format($listProducts->price) }} VNĐ</p>--}}
-{{--                                <a href="#" class="btn btn-primary">Xem</a>--}}
-{{--                                <a href="#" class="btn btn-primary" style="float: right">Mua ngay</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
-{{--             Uncomment để sử dụng phân trang, đảm bảo $listProducts là instance của LengthAwarePaginator--}}
-{{--             {{ $listProducts->links() }}--}}
-{{--        </div>--}}
-{{--    </div>--}}
-    {{--Footer--}}
-    <div>
+
         @include('customer.footer')
     </div>
 </div>

@@ -27,7 +27,7 @@
 @section('content')
     <main>
         <div class="breadcrumb__area theme-bg-1 p-relative z-index-11 pt-95 pb-95">
-            <div class="breadcrumb__thumb" data-background="{{asset('assets/imgs/bg/5fbd679e83730.jpg')}}"></div>
+            <div class="breadcrumb__thumb" data-background="{{asset('assets/imgs/bg/breadcrumb-bg-furniture.jpg')}}"></div>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xxl-12">
@@ -53,7 +53,7 @@
                     <div class="row">
                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                             <div class="bd-product__result mb-30">
-                                <h4>Lego List</h4>
+                                <h4>Danh Sách Xe</h4>
                             </div>
                         </div>
                         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6">
@@ -98,21 +98,28 @@
                                                     <div class="product-badge">
 {{--                                                        <span class="product-trending">{{number_format($listProducts->discount) }}% OFF</span>--}}
                                                     </div>
-                                                    <div class="product-thumb">
+                                                    <div class="product-thumb" >
                                                         <a href="#">
                                                             @if($listProducts->image)
-                                                                <img src="/image/{{$listProducts->image}}" class="card-img-top" alt="Image of {{ $listProducts->name }}">
-                                                            @endif</a>
+                                                                <img src="/image/{{$listProducts->image}}" class="card-img-top" alt="Image of {{ $listProducts->name }}" >
+                                                            @endif
+                                                        </a>
                                                     </div>
                                                     <div class="product-content">
                                                         <h4 class="product-title"><a href="#">{{ $listProducts->name }}</a>
                                                         </h4>
+                                                        <div>
+                                                            Số Ghế: {{ $listProducts->seats }}
+                                                        </div>
+                                                        <div>
+                                                             {{ $listProducts->transmission }}
+                                                        </div>
+
                                                         <div class="product-price">
-                                                            <span class="product-new-price">{{ number_format($listProducts->price) }} VNĐ</span>
-{{--                                                            @php--}}
-{{--                                                                $discountedPrice = $listProducts->price * (1-($listProducts->discount/100));--}}
-{{--                                                            @endphp--}}
-{{--                                                            <span class="product-new-price">{{ number_format($discountedPrice) }} VNĐ</span>--}}
+                                                            <span class="product-new-price">{{ number_format($listProducts->price) }} VNĐ/Ngày</span>
+                                                        </div>
+                                                        <div>
+
                                                         </div>
                                                     </div>
                                                 </div>

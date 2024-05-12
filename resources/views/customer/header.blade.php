@@ -39,7 +39,7 @@
                                                 <a href="{{ url('/customer/category')}}">Thể Loại</a>
                                                 <ul class="submenu">
                                                     @foreach($categories as $category)
-                                                        <li><a href="/customer/{{$category->category_id}}">{{ $category->category_name }}</a></li>
+                                                        <li><a href="/customer/category/{{$category->category_id}}">{{ $category->category_name }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>

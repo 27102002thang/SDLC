@@ -48,8 +48,16 @@ Route::get("/product_delete/{id}", [\App\Http\Controllers\ProductController::cla
 Route::get("/product_update/{id}", [\App\Http\Controllers\ProductController::class, "update"]);
 Route::post("/productSaveUpdate", [\App\Http\Controllers\ProductController::class, "saveUpdate"]);
 
+Route::get("/admin/contract", [\App\Http\Controllers\ProductController::class, "viewContract"]);
 
 Route::get("/customer/{id}", [\App\Http\Controllers\CategoryController::class, "category"]);
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
+
+
+Route::get("/customer/category/{id}", [\App\Http\Controllers\CategoryController::class, "viewCategory"]);
+
+Route::get("/register", [\App\Http\Controllers\AuthController::class, "viewRegister"]);
+Route::post("/saveRegister", [\App\Http\Controllers\AuthController::class, "saveRegister"]);
+

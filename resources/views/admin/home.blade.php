@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard with Chart.js</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="{{asset('bootstrap-5.3.3/css/bootstrap.min.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
@@ -40,6 +40,7 @@
         .chart-container {
             padding: 20px;
         }
+
     </style>
 </head>
 <body class="sb-nav-fixed">

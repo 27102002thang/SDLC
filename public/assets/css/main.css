@@ -186,7 +186,7 @@ html {
 }
 
 /*---------------------------------
-    Typography css start 
+    Typography css start
 ---------------------------------*/
 body {
   font-family: var(--bd-ff-body);
@@ -421,7 +421,7 @@ i[class^=flaticon-] {
 }
 
 /*---------------------------------
-    common classes css start 
+    common classes css start
 ---------------------------------*/
 .w-img img {
   width: 100%;
@@ -571,7 +571,7 @@ i[class^=flaticon-] {
 }
 
 /*----------------------------------------
-    Body Overlay 
+    Body Overlay
 -----------------------------------------*/
 .body-overlay {
   background-color: var(--clr-common-black);
@@ -1406,7 +1406,7 @@ i[class^=flaticon-] {
 }
 
 /*----------------------------------------*/
-/*  SHORT CODE CSS START 
+/*  SHORT CODE CSS START
 /*----------------------------------------*/
 .b-b {
   border-bottom: 1px solid var(--clr-border-1);
@@ -2194,7 +2194,7 @@ i[class^=flaticon-] {
   }
 }
 /*======================================
-Animate slide-left 
+Animate slide-left
 ========================================*/
 @keyframes slide-left {
   from {
@@ -9299,7 +9299,7 @@ div[class*=col]:last-child .counter-item-2::after {
 }
 
 .product-thumb {
-  padding: 80px 60px 40px;
+  padding: 10px 10px 10px;
   overflow: hidden;
   max-width: 370px;
   margin: auto;
@@ -9342,7 +9342,6 @@ div[class*=col]:last-child .counter-item-2::after {
 .product-content {
   padding: 25px 20px;
   border-top: 1px solid var(--clr-border-2);
-  margin-top: 20px;
   position: relative;
 }
 

@@ -13,8 +13,10 @@
             <td>Loại nhiên liệu</td>
             <td>Số chỗ ngồi</td>
             <td>Biển số xe</td>
+            <td>Hộp Số</td>
+            <td>Giá thuê (VND/Ngày)</td>
+            <td>Giá thuê (VND/Ngày)</td>
 
-            <td>Ngày cập nhập</td>
             <td></td>
             <td></td>
 
@@ -23,13 +25,17 @@
         @foreach($listProduct as $product)
             <tr>
                 <td>{{$product->id}}</td>
-                <td>{{$product->name}}</td>
+                <td><img src="/image/{{$product->image}}" style="width:60%; height: 60%" /><br>
+                    {{$product->name}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->fuel_type}}</td>
                 <td>{{$product->seats}}</td>
                 <td>{{$product->license_plates}}</td>
+                <td>{{$product->transmission}}</td>
                 <td>{{$product->price}}</td>
-                <td><img src="/image/{{$product->image}}" style="width:60%; height: 60%" /></td>
+
+
+                <td></td>
 
                 <td><a href="/product_delete/{{$product->id}}">Delete</a></td>
                 <td><a href="/product_update/{{$product->id}}">Update</a></td>

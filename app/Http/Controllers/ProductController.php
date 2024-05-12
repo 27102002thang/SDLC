@@ -76,4 +76,7 @@ class ProductController extends Controller{
         return redirect("/admin/product");
     }
 
+    public function viewContract(){
+        return view('admin/contract');
+    }
 }

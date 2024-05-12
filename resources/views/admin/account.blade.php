@@ -3,7 +3,6 @@
 @section('content')
 <div class="container">
     <br>
-    <a href="/admin/home">Quay lại trang chủ</a>
 <h2 style="text-align: center; color: #fd7e14">Danh sách tài khoản</h2>
 </div>
 
