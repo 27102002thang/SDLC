@@ -55,9 +55,9 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
 
-
 Route::get("/customer/category/{id}", [\App\Http\Controllers\CategoryController::class, "viewCategory"]);
 
 Route::get("/register", [\App\Http\Controllers\AuthController::class, "viewRegister"]);
 Route::post("/saveRegister", [\App\Http\Controllers\AuthController::class, "saveRegister"]);
 
+Route::get("/customer/detail/{id}", [\App\Http\Controllers\UserController::class,'detail'])->name('detail');

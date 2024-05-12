@@ -21,5 +21,13 @@ class UserController extends Controller
         }
         return view("/customer.content", compact('listProduct','categories'));
     }
+    public function detail($id){
+        $detail = DB::table('cars')->where('id', $id)->first();
+
+        return view("/customer.detail", [
+            "detail" => $detail
+        ]);
+
+    }
 
 }

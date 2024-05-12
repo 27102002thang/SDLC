@@ -106,14 +106,14 @@
                                                         </a>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h4 class="product-title"><a href="#">{{ $listProducts->name }}</a>
+                                                        <h4 class="product-title"><a href="{{route('detail',$listProducts->id)}}">{{ $listProducts->name }}</a>
                                                         </h4>
                                                         <div>
                                                             Số Ghế: {{ $listProducts->seats }}
                                                         </div>
-                                                        <div>
-                                                             {{ $listProducts->transmission }}
-                                                        </div>
+{{--                                                        <div>--}}
+{{--                                                             {{ $listProducts->transmission }}--}}
+{{--                                                        </div>--}}
 
                                                         <div class="product-price">
                                                             <span class="product-new-price">{{ number_format($listProducts->price) }} VNĐ/Ngày</span>
