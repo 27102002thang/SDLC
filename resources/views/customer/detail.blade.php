@@ -93,7 +93,7 @@
                         <div class="product__details-content pr-80">
                             <div class="product__details-top d-sm-flex align-items-center mb-15">
                                 <div class="product__details-tag mr-10">
-                                    <a href="#">Construction</a>
+                                    <a href="#">Đánh giá</a>
                                 </div>
                                 <div class="product__details-rating mr-10">
                                     <a href="#"><i class="fa-solid fa-star"></i></a>
@@ -106,10 +106,9 @@
                             </div>
                             <h3 class="product__details-title text-capitalize">{{$detail->name}}</h3>
                             <div class="product__details-price">
-                                <span class="old-price">{{$detail->price}}</span>
+{{--                                <span class="old-price">{{$detail->price}}</span>--}}
                                 <span class="new-price">{{$detail->price}} VNĐ/ngày</span>
                             </div>
-                            <p>{{$detail->description}}</p>
 
                             <div class="product__details-action mb-35">
                                 <div class="product__add-cart">
@@ -131,10 +130,10 @@
                                     <span>Số chỗ:</span> <a href="#">{{$detail->seats}}</a>
                                 </div>
                                 <div class="categories">
-                                    <span>Brand:</span> <a href="#">Hyundai</a>
+                                    <span>Hộp số:</span> <a href="#">{{$detail->transmission}}</a>
                                 </div>
                                 <div class="tag">
-                                    <span>Loai nhien lieu:</span> <a href="#">Xe xăng</a>
+                                    <span>Loại Nhiên Liệu:</span> <a href="#">{{$detail->fuel_type}}</a>
                                 </div>
                             </div>
                         </div>
@@ -148,10 +147,10 @@
                                     <div class="nav nav-tabs flex-column " id="productmoretab" role="tablist">
                                         <button class="nav-link active" id="nav-description-tab" data-bs-toggle="tab"
                                                 data-bs-target="#nav-description" type="button" role="tab"
-                                                aria-controls="nav-description" aria-selected="true">Description</button>
+                                                aria-controls="nav-description" aria-selected="true">Mô Tả</button>
                                         <button class="nav-link" id="nav-additional-tab" data-bs-toggle="tab"
                                                 data-bs-target="#nav-additional" type="button" role="tab"
-                                                aria-controls="nav-additional" aria-selected="false">Additional Information </button>
+                                                aria-controls="nav-additional" aria-selected="false">Thông Số Chi Tiết</button>
                                     </div>
                                 </nav>
                             </div>
@@ -162,23 +161,8 @@
                                     <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
                                          aria-labelledby="nav-description-tab">
                                         <div class="product__details-des">
-                                            <p>In marketing a product is an object or system made available for consumer use it is
-                                                anything that can be offered to a market to
-                                                the desire or need of a retailing, products are often referred to as merchandise,
-                                                and in manufacturing, products are bought as
-                                                materials and then sold as finished goods. A service regarded to as a type of
-                                                product. Commodities are usually raw materials
-                                                metals and agricultural products, but a commodity can also be anything wide the open
-                                                market. In project management,
-                                                the formal definition of the project deliverables</p>
-                                            <p>A product can be classified as tangible or intangible. A tangible product is a
-                                                physical object that can be perceived by touch
-                                                building, vehicle, gadget, An intangible product is a product that can only be
-                                                perceived indirectly such as an insurance policy.
-                                                can be broadly classified under intangible be durable or non durable. A product line
-                                                is "a group of products that are closely
-                                                either because they function in a similar manner, are sold to the same
-                                                customergroups.</p>
+                                            <p>{{$detail->description}}</p>
+
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="nav-additional" role="tabpanel"
@@ -186,41 +170,30 @@
                                         <div class="product__details-info">
                                             <ul>
                                                 <li>
-                                                    <h4>Weight</h4>
-                                                    <span>2 lbs</span>
+                                                    <h4>Nhiên Liệu</h4>
+                                                    <span>{{$detail->fuel_type}}</span>
                                                 </li>
                                                 <li>
-                                                    <h4>Dimensions</h4>
-                                                    <span>12 × 16 × 19 in</span>
+                                                    <h4>Số Chỗ </h4>
+                                                    <span>{{$detail->seats}} chỗ</span>
                                                 </li>
                                                 <li>
-                                                    <h4>Product</h4>
-                                                    <span>Purchase this product on rag-bone.com</span>
+                                                    <h4>Hộp số</h4>
+                                                    <span>{{$detail->transmission}}</span>
                                                 </li>
                                                 <li>
-                                                    <h4>Color</h4>
-                                                    <span>Gray, Black</span>
+                                                    <h4>Tiêu Hao </h4>
+                                                    <span>{{$detail->fuel_consumption}}  l/100km</span>
                                                 </li>
                                                 <li>
-                                                    <h4>Size</h4>
-                                                    <span>S, M, L, XL</span>
+                                                    <h4>Hãng Xe</h4>
+                                                    <span>{{$detail->brand}}</span>
                                                 </li>
                                                 <li>
-                                                    <h4>Model</h4>
-                                                    <span>Model </span>
+                                                    <h4>Biển số xe</h4>
+                                                    <span>{{$detail->license_plates}}</span>
                                                 </li>
-                                                <li>
-                                                    <h4>Shipping</h4>
-                                                    <span>Standard shipping: $5,95</span>
-                                                </li>
-                                                <li>
-                                                    <h4>Care Info</h4>
-                                                    <span>Machine Wash up to 40ºC/86ºF Gentle Cycle</span>
-                                                </li>
-                                                <li>
-                                                    <h4>Brand</h4>
-                                                    <span>Kazen</span>
-                                                </li>
+
                                             </ul>
                                         </div>
                                     </div>

@@ -26,14 +26,9 @@
                                         <ul>
                                             <li class="has-dropdown">
                                                 <a href="/customer/index">Home</a>
-                                                <ul class="submenu">
-                                                    <li><a href="pharmacy.html">Pharmacy Store</a></li>
-                                                    <li><a href="index.html">Furniture Store</a></li>
-                                                    <li><a href="grocery.html">Grocery Store</a></li>
-                                                </ul>
                                             </li>
                                             <li>
-                                                <a href="about.html">About</a>
+                                                <a href="/customer/aboutUs">Về Chúng tôi</a>
                                             </li>
                                             <li class="nav-item has-dropdown">
                                                 <a href="{{ url('/customer/category')}}">Thể Loại</a>
@@ -43,28 +38,9 @@
 {{--                                                    @endforeach--}}
                                                 </ul>
                                             </li>
-                                            <li class="has-dropdown">
-                                                <a href="about.html">Pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="about.html">About Us</a></li>
-                                                    <li><a href="store.html">Find a Store</a></li>
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                    <li><a href="faq.html">Faq</a></li>
-                                                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                    <li><a href="error.html">404</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-dropdown">
-                                                <a href="blog.html">Blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog Default</a></li>
-                                                    <li><a href="blog-grid.html">Blog Grid</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
+
                                             <li>
-                                                <a href="contact.html">Contact</a>
+                                                <a href="contact.html">Liên Hệ</a>
                                             </li>
                                         </ul>
                                     </nav>

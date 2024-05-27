@@ -13,10 +13,10 @@ class UserController extends Controller
             $keyword = '%' . trim($keyword) . '%';
             $listProduct = DB::table('cars')
                 ->where('name', 'like', $keyword)
-                ->               paginate(4);
+                ->               paginate(8);
 
         }else{
-            $listProduct =DB::table('cars')->paginate(4);
+            $listProduct =DB::table('cars')->paginate(8);
 
         }
         return view("/customer.content", compact('listProduct'));
@@ -29,13 +29,6 @@ class UserController extends Controller
         ]);
 
     }
-    public function detail($id){
-        $detail = DB::table('cars')->where('id', $id)->first();
 
-        return view("/customer.detail", [
-            "detail" => $detail
-        ]);
-
-    }
 
 }
