@@ -14,12 +14,14 @@ class UserController extends Controller
             $listProduct = DB::table('cars')
                 ->where('name', 'like', $keyword)
                 ->               paginate(8);
-
+            $totalResults = DB::table('cars')
+                ->where('name', 'like', $keyword)
+                ->count();
         }else{
             $listProduct =DB::table('cars')->paginate(8);
-
+            $totalResults = DB::table('cars')->count();
         }
-        return view("/customer.content", compact('listProduct'));
+        return view("/customer.content", compact('listProduct','totalResults'));
     }
     public function detail($id){
         $detail = DB::table('cars')->where('id', $id)->first();

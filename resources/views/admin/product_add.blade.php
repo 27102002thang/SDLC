@@ -1,16 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{asset('bootstrap-5.3.3/css/bootstrap.min.css')}}">
-</head>
-<body>
-<a href="/product">Quay Lại</a>
+@extends('admin.home')
+
+@section('content')
+
 <div class="container">
+    <br>
     <h2 class="text-primary">Thêm sản phẩm mới</h2>
     <form action="/productSave" method="post" enctype="multipart/form-data">
         @csrf
@@ -31,9 +24,30 @@
             <label for="price" class="form-label">Giá</label>
             <textarea class="form-control" name="price" id="productName" placeholder="Nhập giá tiền" ></textarea>
         </div>
+
         <div class="mb-3">
-            <label for="description" class="form-label">Mô tả</label>
-            <textarea class="form-control" name="description" id="description" placeholder="Mô tả sản phẩm" ></textarea>
+            <label for="fuel_type" class="form-label">Nhiên Liệu</label>
+            <textarea class="form-control" name="fuel_type" id="fuel_type" placeholder="Nhiên Liệu sử dụng" ></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="seats" class="form-label">Số Ghế</label>
+            <textarea class="form-control" name="seats" id="seats" placeholder="Số Ghế của xe" ></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="fuel_consumption" class="form-label">Nhiên liệu tiêu hao</label>
+            <textarea class="form-control" name="fuel_consumption" id="fuel_consumption" placeholder="Nhiên liệu tiêu hao sau 100km" ></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="transmission" class="form-label">Hộp số</label>
+            <textarea class="form-control" name="transmission" id="transmission" placeholder="Hộp số của xe" ></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="brand" class="form-label">Hãng xe</label>
+            <textarea class="form-control" name="brand" id="brand" placeholder="Hãng xe" ></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="license_plates" class="form-label">Biển số xe</label>
+            <textarea class="form-control" name="license_plates" id="license_plates" placeholder="Biển số xe" ></textarea>
         </div>
 
         <div class="col-12">
@@ -43,10 +57,12 @@
                 <label class="input-group-text" >Upload</label>
             </div>
         </div>
-
+        <div class="mb-3">
+            <label for="description" class="form-label">Mô tả</label>
+            <textarea class="form-control" name="description" id="description" placeholder="Mô tả sản phẩm" ></textarea>
+        </div>
         <button class="btn btn-primary">Save</button>
     </form>
 
 </div>
-</body>
-</html>
+@endsection

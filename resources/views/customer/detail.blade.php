@@ -107,7 +107,8 @@
                             <h3 class="product__details-title text-capitalize">{{$detail->name}}</h3>
                             <div class="product__details-price">
 {{--                                <span class="old-price">{{$detail->price}}</span>--}}
-                                <span class="new-price">{{$detail->price}} VNĐ/ngày</span>
+                                <span class="new-price">{{ number_format($detail->price, 0, ',', '.') }} VNĐ/ngày</span>
+
                             </div>
 
                             <div class="product__details-action mb-35">
@@ -145,10 +146,10 @@
                             <div class="product__details-more-tab mr-15">
                                 <nav>
                                     <div class="nav nav-tabs flex-column " id="productmoretab" role="tablist">
-                                        <button class="nav-link active" id="nav-description-tab" data-bs-toggle="tab"
-                                                data-bs-target="#nav-description" type="button" role="tab"
-                                                aria-controls="nav-description" aria-selected="true">Mô Tả</button>
-                                        <button class="nav-link" id="nav-additional-tab" data-bs-toggle="tab"
+{{--                                        <button class="nav-link active" id="nav-description-tab" data-bs-toggle="tab"--}}
+{{--                                                data-bs-target="#nav-description" type="button" role="tab"--}}
+{{--                                                aria-controls="nav-description" aria-selected="true">Mô Tả</button>--}}
+                                        <button class="nav-link active" id="nav-additional-tab" data-bs-toggle="tab"
                                                 data-bs-target="#nav-additional" type="button" role="tab"
                                                 aria-controls="nav-additional" aria-selected="false">Thông Số Chi Tiết</button>
                                     </div>
@@ -160,13 +161,6 @@
                                 <div class="tab-content" id="productmorecontent">
                                     <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
                                          aria-labelledby="nav-description-tab">
-                                        <div class="product__details-des">
-                                            <p>{{$detail->description}}</p>
-
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-additional" role="tabpanel"
-                                         aria-labelledby="nav-additional-tab">
                                         <div class="product__details-info">
                                             <ul>
                                                 <li>
@@ -193,7 +187,11 @@
                                                     <h4>Biển số xe</h4>
                                                     <span>{{$detail->license_plates}}</span>
                                                 </li>
-
+                                                <li>
+                                                <div class="product__details-des">
+                                                    <p>{{$detail->description}}</p>
+                                                </div>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>

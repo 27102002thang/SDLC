@@ -4,44 +4,41 @@
 
     <br>
     <h3 style="text-align: center;color: #fd7e14">Danh sách sản phẩm</h3>
-    <button class="btn btn-primary"><a href="/productAdd" class="text-light">Add</a></button>
-    <table class="table ">
+    <button class="btn btn-primary"><a href="/admin/productAdd" class="text-light">Add</a></button>
+    <table class="table table-bordered  ">
+        <thead class="table-light">
         <tr>
-            <td>ID</td>
-            <td>Tên sản phẩm</td>
-            <td>Giá tiền</td>
-            <td>Loại nhiên liệu</td>
-            <td>Số chỗ ngồi</td>
-            <td>Biển số xe</td>
-            <td>Hộp Số</td>
-            <td>Giá thuê (VND/Ngày)</td>
-            <td>Giá thuê (VND/Ngày)</td>
-
-            <td></td>
-            <td></td>
-
+            <th>ID</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá tiền</th>
+            <th>Loại nhiên liệu</th>
+            <th>Số chỗ ngồi</th>
+            <th>Biển số xe</th>
+            <th>Hộp Số</th>
+            <th>Giá thuê (VND/Ngày)</th>
+            <th>Giá thuê (VND/Ngày)</th>
+            <th></th>
+            <th></th>
         </tr>
+        </thead>
         <hr>
         @foreach($listProduct as $product)
+            <tbody >
             <tr>
                 <td>{{$product->id}}</td>
                 <td><img src="/image/{{$product->image}}" style="width:60%; height: 60%" /><br>
                     {{$product->name}}</td>
-                <td>{{$product->price}}</td>
+                <td>{{number_format($product->price)}} VND</td>
                 <td>{{$product->fuel_type}}</td>
                 <td>{{$product->seats}}</td>
                 <td>{{$product->license_plates}}</td>
                 <td>{{$product->transmission}}</td>
                 <td>{{$product->price}}</td>
-
-
                 <td></td>
-
                 <td><a href="/product_delete/{{$product->id}}">Delete</a></td>
                 <td><a href="/product_update/{{$product->id}}">Update</a></td>
-
             </tr>
-
+            </tbody>
         @endforeach
     </table>
 

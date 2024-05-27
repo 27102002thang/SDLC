@@ -7,7 +7,7 @@
 </div>
 
 <div class="container">
-    <button class="btn btn-primary"><a href="/addAccount" class="text-light">Add</a></button>
+    <button class="btn btn-primary"><a href="/admin/addAccount" class="text-light">Add</a></button>
     <table class="table">
         <tr>
             <td>ID</td>

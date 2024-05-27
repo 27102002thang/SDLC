@@ -77,13 +77,25 @@
                                 </a>
                             </div>
                             <div class="d-flex align-items-center header-action-item">
-                                <p class="me-3 mb-0">
-                                    {{ Auth::user()->name }}
-                                </p>
-                                <form method="post" action="{{ route('logout') }}">
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-dark">Logout</button>
-                                </form>
+                                @if(Auth::check())
+                                    <p class="me-3 mb-0">
+                                        {{ Auth::user()->name }}
+                                    </p>
+                                    <form method="post" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-dark">Đăng xuất</button>
+                                    </form>
+                                @else
+                                    <form method="get" action="{{ route('login') }}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-dark" style="margin:2px">Đăng nhập</button>
+                                    </form>
+
+                                    <form method="get" action="{{ route('register') }}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-dark" style="margin:2px">Đăng kí</button>
+                                    </form>
+                                @endif
                             </div>
                         </div>
                     </div>

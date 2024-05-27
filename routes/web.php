@@ -34,7 +34,7 @@ Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])-
 // khi vào link liên hệ sẽ vào LienHeController , function showData
 Route::get('/admin/account',[AccountController::class, "showAcc"]);
 
-Route::get('/addAccount',[AccountController::class, "addAcc"]);
+Route::get('/admin/addAccount',[AccountController::class, "addAcc"]);
 Route::post("/accountSave", [AccountController::class, "save"]);
 Route::get("/account_delete/{id}", [AccountController::class, "delete"]);
 Route::get("/account_update/{id}", [AccountController::class, "update"]);
@@ -42,7 +42,7 @@ Route::post("/accountSaveUpdate", [AccountController::class, "saveUpdate"]);
 
 
 Route::get("/admin/product", [\App\Http\Controllers\ProductController::class, "getAll"]);
-Route::get("/productAdd", [\App\Http\Controllers\ProductController::class, "add"]);
+Route::get("/admin/productAdd", [\App\Http\Controllers\ProductController::class, "add"]);
 Route::post("/productSave", [\App\Http\Controllers\ProductController::class, "save"]);
 Route::get("/product_delete/{id}", [\App\Http\Controllers\ProductController::class, "delete"]);
 Route::get("/product_update/{id}", [\App\Http\Controllers\ProductController::class, "update"]);
@@ -57,7 +57,7 @@ Route::get('/admin/dashboard', function () {
 
 Route::get("/customer/category/{id}", [\App\Http\Controllers\CategoryController::class, "viewCategory"]);
 
-Route::get("/register", [\App\Http\Controllers\AuthController::class, "viewRegister"]);
+Route::get("/register", [\App\Http\Controllers\AuthController::class, "viewRegister"])->name("register");
 Route::post("/saveRegister", [\App\Http\Controllers\AuthController::class, "saveRegister"]);
 
 Route::get("/customer/detail/{id}", [\App\Http\Controllers\UserController::class,'detail'])->name('detail');

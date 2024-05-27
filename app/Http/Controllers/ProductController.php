@@ -27,17 +27,27 @@ class ProductController extends Controller{
         $productName = $request -> get('productName');
         $price = $request ->get('price');
         $description = $request ->get('description');
+        $fuel_type = $request ->get('fuel_type');
+        $seats = $request ->get('seats');
+        $license_plates = $request ->get('license_plates');
+        $transmission = $request ->get('transmission');
+        $brand = $request ->get('brand');
+
         $image = "";
         if ($request->image != null) {
             $image = $request->image->getClientOriginalName();
             $request->image->move(public_path("image"), $image);
         };
-        $importedDate = now();
+
         DB::table("cars")-> insert([
             'name' => $productName,
             'price'=> $price,
             'description'=> $description,
-            'imported_date' => $importedDate,
+            'brand' => $brand,
+            'fuel_type' => $fuel_type,
+            'seats' => $seats,
+            'license_plates'=> $license_plates,
+            'transmission' => $transmission,
             'image' => $image
         ]);
         return redirect("/admin/product");
@@ -57,7 +67,18 @@ class ProductController extends Controller{
         $productName = $request ->productName;
         $price = $request ->price;
         $description = $request ->description;
-        $importedDate=$request ->date;
+        $fuel_type = $request ->fuel_type;
+        $seats = $request ->seats;
+        $fuel_consumption=$request ->fuel_consumption;
+        $license_plates = $request ->liscense_plates;
+        $transmission = $request ->transmission;
+        $brand = $request ->brand;
+
+        $image = "";
+        if ($request->image != null) {
+            $image = $request->image->getClientOriginalName();
+            $request->image->move(public_path("image"), $image);
+        };
 
         DB::table("cars")
             ->where ('id','=',$id)
@@ -65,7 +86,13 @@ class ProductController extends Controller{
                 'name' => $productName,
                 'price' => $price,
                 'description' => $description,
-
+                'brand' => $brand,
+                'fuel_type' => $fuel_type,
+                'seats' => $seats,
+                'fuel_consumption' => $fuel_consumption,
+                'license_plates'=> $license_plates,
+                'transmission' => $transmission,
+                'image'=>$image
             ]);
         return redirect('/admin/product');
     }

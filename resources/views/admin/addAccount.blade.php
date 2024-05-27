@@ -1,16 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('bootstrap-5.3.3/css/bootstrap.min.css')}}">
-    <title>Document</title>
-</head>
-<body>
+@extends('admin.home')
+
+@section('content')
 <div>
-    <a href="/account">Quay lại</a>
+    <a href="/admin/account">Quay lại</a>
     <h2 style="text-align: center;color: #fd7e14">Thêm Tài Khoản</h2>
 </div>
 
@@ -49,5 +41,4 @@
         <button class="btn btn-primary">Save</button>
     </form>
 </div>
-</body>
-</html>
+@endsection
