@@ -46,13 +46,14 @@ class UserController extends Controller
             'end_date' => 'required|date|after_or_equal:start_date',
         ]);
 
+
         DB::table('orders')->insert([
             'id' => $request->id,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'start_date' => $request->start_date,
-            'end_date' => $request->end_date,
+            'order_date' => $request->start_date,
+            'return_date' => $request->end_date,
 //            'created_at' => now(),
 //            'updated_at' => now(),
         ]);

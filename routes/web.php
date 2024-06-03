@@ -65,3 +65,4 @@ Route::get("/customer/detail/{id}", [\App\Http\Controllers\UserController::class
 
 Route::get("/customer/order/{id}", [\App\Http\Controllers\UserController::class,'showForm'])->name('order');
 Route::post("/customer/order", [\App\Http\Controllers\UserController::class,'store'])->name('saveorder');
+Route::get("/admin/orderDetail", [\App\Http\Controllers\OrderController::class,"showOrder"])->name('orderDetail');

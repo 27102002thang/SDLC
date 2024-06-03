@@ -7,32 +7,25 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+    public function showOrder(Request $request){
 
-    public function showForm($id)
-    {
-        return view('/customer.order', ['id' => $id]);
+        $orders = DB::table('order_detail')
+            ->join('cars', 'order_detail.product_id', '=', 'cars.id')
+            ->join('orders', 'order_detail.order_id', '=', 'orders.id')
+            ->select(
+                'cars.name as ten_xe',
+                'cars.price as gia_xe',
+                'orders.name as ten_khach_hang',
+                'orders.phone as so_dien_thoai_khach_hang',
+                'orders.address as dia_chi_khach_hang',
+                'orders.order_date as ngay_dat',
+                'orders.return_date as ngay_tra',
+                DB::raw('DATEDIFF(orders.return_date, orders.order_date) as so_ngay_thue'),
+                DB::raw('(DATEDIFF(orders.return_date, orders.order_date) * cars.price) as tong_so_tien')
+            )
+            ->get();
+
+        return view('/admin.orderDetail', ["orders"=>$orders]);
     }
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
-            'phone' => 'required|string|max:20',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after_or_equal:start_date',
-        ]);
 
-        DB::table('orders')->insert([
-            'id' => $request->id,
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'start_date' => $request->start_date,
-            'end_date' => $request->end_date,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        return redirect()->back()->with('success', 'Đặt xe thành công.');
-    }
 }

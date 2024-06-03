@@ -61,6 +61,10 @@
                             <label for="end_date">Ngày kết thúc:</label>
                             <input type="date" class="form-control" id="end_date" name="end_date" required>
                         </div>
+                        <div class="form-group">
+                            <label for="end_date">Ghi Chú:</label>
+                            <input type="date" class="form-control" id="end_date" name="end_date" required>
+                        </div>
                         <button type="submit" class="btn btn-primary">Đặt ngay</button>
                     </form>
                 </div>
