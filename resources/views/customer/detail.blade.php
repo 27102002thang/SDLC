@@ -113,7 +113,7 @@
 
                             <div class="product__details-action mb-35">
                                 <div class="product__add-cart">
-                                    <a href="javascript:void(0)" class="fill-btn cart-btn">
+                                    <a href="{{route('order',$detail->id)}}" class="fill-btn cart-btn">
                               <span class="fill-btn-inner">
                                  <span class="fill-btn-normal">Đặt ngay<i
                                          class="fa-solid fa-basket-shopping"></i></span>
@@ -130,9 +130,9 @@
                                 <div class="sku">
                                     <span>Số chỗ:</span> <a href="#">{{$detail->seats}}</a>
                                 </div>
-                                <div class="categories">
-                                    <span>Hộp số:</span> <a href="#">{{$detail->transmission}}</a>
-                                </div>
+{{--                                <div class="categories">--}}
+{{--                                    <span>Hộp số:</span> <a href="#">{{$detail->transmission}}</a>--}}
+{{--                                </div>--}}
                                 <div class="tag">
                                     <span>Loại Nhiên Liệu:</span> <a href="#">{{$detail->fuel_type}}</a>
                                 </div>
@@ -173,15 +173,15 @@
                                                 </li>
                                                 <li>
                                                     <h4>Hộp số</h4>
-                                                    <span>{{$detail->transmission}}</span>
+{{--                                                    <span>{{$detail->transmission}}</span>--}}
                                                 </li>
                                                 <li>
                                                     <h4>Tiêu Hao </h4>
-                                                    <span>{{$detail->fuel_consumption}}  l/100km</span>
+{{--                                                    <span>{{$detail->fuel_consumption}}  l/100km</span>--}}
                                                 </li>
                                                 <li>
                                                     <h4>Hãng Xe</h4>
-                                                    <span>{{$detail->brand}}</span>
+{{--                                                    <span>{{$detail->brand}}</span>--}}
                                                 </li>
                                                 <li>
                                                     <h4>Biển số xe</h4>
@@ -203,7 +203,54 @@
             </div>
         </div>
         <!-- Product details area end -->
+        <!-- Modal for rent car -->
+{{--        <div class="modal fade" id="rentCarModal" tabindex="-1" role="dialog" aria-labelledby="rentCarModalLabel" aria-hidden="true">--}}
+{{--            <div class="modal-dialog" role="document">--}}
+{{--                <div class="modal-content">--}}
+{{--                    <div class="modal-header">--}}
+{{--                        <h5 class="modal-title" id="rentCarModalLabel">Đặt xe</h5>--}}
+{{--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                            <span aria-hidden="true">&times;</span>--}}
+{{--                        </button>--}}
+{{--                    </div>--}}
+{{--                    <div class="modal-body">--}}
+{{--                        <form action="{{ route('rent.store') }}" method="POST">--}}
+{{--                            @csrf--}}
+{{--                            <input type="hidden" name="car_id" value="{{ $detail->id }}">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label for="name">Tên:</label>--}}
+{{--                                <input type="text" class="form-control" id="name" name="name" required>--}}
+{{--                            </div>--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label for="email">Email:</label>--}}
+{{--                                <input type="email" class="form-control" id="email" name="email" required>--}}
+{{--                            </div>--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label for="phone">Số điện thoại:</label>--}}
+{{--                                <input type="text" class="form-control" id="phone" name="phone" required>--}}
+{{--                            </div>--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label for="start_date">Ngày bắt đầu:</label>--}}
+{{--                                <input type="date" class="form-control" id="start_date" name="start_date" required>--}}
+{{--                            </div>--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label for="end_date">Ngày kết thúc:</label>--}}
+{{--                                <input type="date" class="form-control" id="end_date" name="end_date" required>--}}
+{{--                            </div>--}}
+{{--                            <button type="submit" class="btn btn-primary">Đặt ngay</button>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
+{{--        <script>--}}
+{{--        function promptLogin() {--}}
+{{--            alert('Vui lòng đăng nhập để đặt xe.');--}}
+{{--        }--}}
+    </script>
 
     </main>
-
 @endsection
+
+

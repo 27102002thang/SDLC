@@ -13,7 +13,7 @@
 <a href="/account">Quay lại</a>
 <div class="container">
     <h2 class="text-primary">Sửa thông tin tài khoản</h2>
-    <form action="/accountSaveUpdate" method="post">
+    <form action="/accountSaveUpdate" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="id" class="form-label">ID: {{$account->id}}</label>

@@ -7,7 +7,7 @@
 </div>
 
 <div class="container">
-    <form action="/accountSave" method="post">
+    <form action="/accountSave" method="post" enctype="multipart/form-data">
         @csrf
         @if($errors->any())
             @foreach($errors->all() as $obj)

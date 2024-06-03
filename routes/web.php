@@ -61,3 +61,7 @@ Route::get("/register", [\App\Http\Controllers\AuthController::class, "viewRegis
 Route::post("/saveRegister", [\App\Http\Controllers\AuthController::class, "saveRegister"]);
 
 Route::get("/customer/detail/{id}", [\App\Http\Controllers\UserController::class,'detail'])->name('detail');
+
+
+Route::get("/customer/order/{id}", [\App\Http\Controllers\UserController::class,'showForm'])->name('order');
+Route::post("/customer/order", [\App\Http\Controllers\UserController::class,'store'])->name('saveorder');

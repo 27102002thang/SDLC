@@ -6,7 +6,7 @@
 
 <div class="container">
     <h2 class="text-primary">Sửa thông tin sản phẩm</h2>
-    <form action="/productSaveUpdate" method="post">
+    <form action="/productSaveUpdate" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="productName" class="form-label">ID: {{$product->id}}</label>
