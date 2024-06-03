@@ -33,7 +33,7 @@
 
 
     <div class="product__details-area section-space-medium">
-        <div class="container ">
+        <div class="container" style="margin-left: 200px">
             <div class="row align-items-center">
                 <div class="col-xxl-7 col-lg-7 ">
                     <form action="{{ route('saveorder') }}" method="POST">
@@ -45,21 +45,41 @@
                             <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
+                        <div class="mb-3 row">
+                            <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                            <div class="col-sm-10">
                             <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Số điện thoại:</label>
+                        <div class="mb-3 row">
+                            <label for="phone" class="col-sm-2 col-form-label">Số điện thoại:</label>
+                            <div class="col-sm-10">
                             <input type="text" class="form-control" id="phone" name="phone" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="start_date">Ngày bắt đầu:</label>
+                        <div class="mb-3 row">
+                            <label for="address" class="col-sm-2 col-form-label">Địa chỉ:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="address" name="address" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="note" class="col-sm-2 col-form-label">Ghi chú:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="note" name="note" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="start_date" class="col-sm-2 col-form-label">Ngày thuê:</label>
+                            <div class="col-sm-10">
                             <input type="date" class="form-control" id="start_date" name="start_date" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="end_date">Ngày kết thúc:</label>
-                            <input type="date" class="form-control" id="end_date" name="end_date" required>
+                        <div class="mb-3 row">
+                            <label for="end_date" class="col-sm-2 col-form-label">Ngày trả:</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="end_date" name="end_date" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="end_date">Ghi Chú:</label>
