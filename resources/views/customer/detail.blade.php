@@ -173,15 +173,15 @@
                                                 </li>
                                                 <li>
                                                     <h4>Hộp số</h4>
-{{--                                                    <span>{{$detail->transmission}}</span>--}}
+                                                    <span>{{$detail->transmission}}</span>
                                                 </li>
                                                 <li>
                                                     <h4>Tiêu Hao </h4>
-{{--                                                    <span>{{$detail->fuel_consumption}}  l/100km</span>--}}
+                                                    <span>{{$detail->fuel_consumption}}  l/100km</span>
                                                 </li>
                                                 <li>
                                                     <h4>Hãng Xe</h4>
-{{--                                                    <span>{{$detail->brand}}</span>--}}
+                                                    <span>{{$detail->brand}}</span>
                                                 </li>
                                                 <li>
                                                     <h4>Biển số xe</h4>

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <br>
+    <br><br><br>
     <h2 class="text-primary">Thêm sản phẩm mới</h2>
     <form action="/productSave" method="post" enctype="multipart/form-data">
         @csrf

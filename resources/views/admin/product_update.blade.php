@@ -2,7 +2,7 @@
 
 @section('content')
 
-<br>
+<br><br><br>
 
 <div class="container">
     <h2 class="text-primary">Sửa thông tin sản phẩm</h2>

@@ -15,8 +15,8 @@ use \App\Http\Controllers\AccountController;
 |
 */
 
-Route::get('/index', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('customer.content');
 });
 Route::middleware('auth')->group(function () {
     Route::view('/admin/home', 'admin.home')->name('admin.home');
@@ -64,5 +64,13 @@ Route::get("/customer/detail/{id}", [\App\Http\Controllers\UserController::class
 
 
 Route::get("/customer/order/{id}", [\App\Http\Controllers\UserController::class,'showForm'])->name('order');
-Route::post("/customer/order", [\App\Http\Controllers\UserController::class,'store'])->name('saveorder');
+Route::middleware(['auth'])->group(function () {
+    Route::post("/customer/order", [\App\Http\Controllers\UserController::class,'store'])->name('saveorder');
+}) ;
 Route::get("/admin/orderDetail", [\App\Http\Controllers\OrderController::class,"showOrder"])->name('orderDetail');
+
+Route::get("/order_delete/{id}", [\App\Http\Controllers\OrderController::class, "delete"]);
+
+Route::get("/order_update/{id}", [\App\Http\Controllers\OrderController::class, "formUpdate"]);
+
+Route::post("/order_saveUpdate", [\App\Http\Controllers\OrderController::class, "saveUpdate"]);

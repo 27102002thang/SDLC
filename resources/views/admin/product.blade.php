@@ -16,7 +16,6 @@
             <th>Biển số xe</th>
             <th>Hộp Số</th>
             <th>Giá thuê (VND/Ngày)</th>
-            <th>Giá thuê (VND/Ngày)</th>
             <th></th>
             <th></th>
         </tr>
@@ -34,7 +33,6 @@
                 <td>{{$product->license_plates}}</td>
                 <td>{{$product->transmission}}</td>
                 <td>{{$product->price}}</td>
-                <td></td>
                 <td><a href="/product_delete/{{$product->id}}">Delete</a></td>
                 <td><a href="/product_update/{{$product->id}}">Update</a></td>
             </tr>

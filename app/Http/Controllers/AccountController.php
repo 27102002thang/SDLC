@@ -52,7 +52,6 @@ class AccountController extends Controller
         return view('/admin.account_update',[
             "account" => $account
         ]);
-
     }
     public function saveUpdate(Request $request ){
         $id = $request ->id;

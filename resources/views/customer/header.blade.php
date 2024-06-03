@@ -30,14 +30,6 @@
                                             <li>
                                                 <a href="/customer/aboutUs">Về Chúng tôi</a>
                                             </li>
-                                            <li class="nav-item has-dropdown">
-                                                <a href="{{ url('/customer/category')}}">Thể Loại</a>
-                                                <ul class="submenu">
-{{--                                                    @foreach($categories as $category)--}}
-{{--                                                        <li><a href="/customer/category/{{$category->category_id}}">{{ $category->category_name }}</a></li>--}}
-{{--                                                    @endforeach--}}
-                                                </ul>
-                                            </li>
 
                                             <li>
                                                 <a href="contact.html">Liên Hệ</a>

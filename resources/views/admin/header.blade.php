@@ -49,11 +49,7 @@
                         Tài Khoản
                         <div class="sb-sidenav-collapse-arrow"></div>
                     </a>
-                    <a class="nav-link collapsed" href="/admin/contract" >
-                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                        Xác Nhận Cho Thuê
-                        <div class="sb-sidenav-collapse-arrow"></div>
-                    </a>
+
                     <a class="nav-link collapsed" href="/admin/orderDetail" >
                         <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                         Chi tiết đơn hàng

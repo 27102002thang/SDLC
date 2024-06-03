@@ -2,11 +2,9 @@
 
 @section('content')
 
-
     @if (session('message'))
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
-
 
     <div class="breadcrumb__area theme-bg-1 p-relative z-index-11 pt-95 pb-95">
         <div class="breadcrumb__thumb" data-background="{{asset('assets/imgs/bg/breadcrumb-bg-furniture.jpg')}}"></div>

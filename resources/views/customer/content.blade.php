@@ -53,7 +53,7 @@
                     <div class="row">
                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                             <div class="bd-product__result mb-30">
-                                <h4>Số kết quả: {{$totalResults}} Xe</h4>
+{{--                                <h4>Số kết quả: {{$totalResults}} Xe</h4>--}}
                             </div>
                         </div>
                         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6">
