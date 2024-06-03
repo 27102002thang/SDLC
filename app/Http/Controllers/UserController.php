@@ -42,8 +42,10 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'phone' => 'required|string|max:20',
+            'address' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
+            'note' => 'required|string|max:255',
         ]);
 
 
@@ -54,6 +56,8 @@ class UserController extends Controller
             'phone' => $request->phone,
             'order_date' => $request->start_date,
             'return_date' => $request->end_date,
+            'address' => $request ->address,
+            'note' => $request->note,
 //            'created_at' => now(),
 //            'updated_at' => now(),
         ]);

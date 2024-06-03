@@ -54,6 +54,11 @@
                             <input type="text" class="form-control" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
+                            <label for="address">Địa chỉ:</label>
+                            <input type="text" class="form-control" id="address" name="address" required>
+                        </div>
+
+                        <div class="form-group">
                             <label for="start_date">Ngày bắt đầu:</label>
                             <input type="date" class="form-control" id="start_date" name="start_date" required>
                         </div>
@@ -62,8 +67,8 @@
                             <input type="date" class="form-control" id="end_date" name="end_date" required>
                         </div>
                         <div class="form-group">
-                            <label for="end_date">Ghi Chú:</label>
-                            <input type="date" class="form-control" id="end_date" name="end_date" required>
+                            <label for="note">Ghi Chú:</label>
+                            <input type="text" class="form-control" id="note" name="note" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Đặt ngay</button>
                     </form>
