@@ -1,7 +1,12 @@
 @extends('customer.index')
 
 @section('content')
-
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
     @if (session('message'))
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
@@ -27,52 +32,59 @@
         </div>
     </div>
 
-    <h4 class="bd-product__area section-space-medium text-center">Thuê xe</h4>
+    <h4 class="bd-product__area section-space-medium text-center">Điền thông tin liên hệ</h4>
 
 
-    <div class="product__details-area section-space-medium">
         <div class="container ">
-            <div class="row align-items-center">
-                <div class="col-xxl-7 col-lg-7 ">
-                    <form action="{{ route('saveorder') }}" method="POST">
+                    <form style="max-width: 750px;
+                                  margin: 40px auto;
+                                  padding: 20px;
+                                  border: 1px solid #ccc;
+                                  border-radius: 10px;
+                                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"
+                          action="{{ route('saveorder') }}" method="POST">
                         @csrf
                         <input type="hidden" name="id" value="{{ $id }}">
-                        <div class="mb-3 row">
-                            <label for="name" class="col-sm-2 col-form-label">Tên:</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
+                        <div class="form-group">
+                            <label for="name">Tên:</label>
+                            <input type="text" class="form-control" id="name" name="name" required><br>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" required><br>
                         </div>
                         <div class="form-group">
                             <label for="phone">Số điện thoại:</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
+                            <input type="text" class="form-control" id="phone" name="phone" required><br>
                         </div>
                         <div class="form-group">
                             <label for="address">Địa chỉ:</label>
-                            <input type="text" class="form-control" id="address" name="address" required>
+                            <input type="text" class="form-control" id="address" name="address" required><br>
                         </div>
 
                         <div class="form-group">
                             <label for="start_date">Ngày bắt đầu:</label>
-                            <input type="date" class="form-control" id="start_date" name="start_date" required>
+                            <input type="date" id="start_date" name="start_date" required style="width: 550px; height: 50px; font-size: 16px;"><br>
                         </div>
                         <div class="form-group">
                             <label for="end_date">Ngày kết thúc:</label>
-                            <input type="date" class="form-control" id="end_date" name="end_date" required>
+                            <input type="date" id="end_date" name="end_date" required style="width: 550px; height: 50px; font-size: 16px;"><br>
                         </div>
                         <div class="form-group">
                             <label for="note">Ghi Chú:</label>
-                            <input type="text" class="form-control" id="note" name="note" required>
+                            <input type="text" class="form-control" id="note" name="note" required><br>
                         </div>
-                        <button type="submit" class="btn btn-primary">Đặt ngay</button>
+                        <input style="background-color: #4CAF50;
+                               color: #fff;
+                               padding: 10px 20px;
+                               border: none;
+                               border-radius: 10px;
+                               cursor: pointer;
+                               background-color: #3e8e41;
+                               "
+                                type="submit" value="Đặt ngay">
                     </form>
-                </div>
-            </div>
         </div>
-    </div>
+
 
 @endsection
